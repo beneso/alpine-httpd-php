@@ -11,7 +11,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -
 # For Nette PHP framework to display application without the /www, we need two things:
 # 1. Load rewrite_module
 # 2. Make sure AllowOverride allows .htaccess *for the DocumentRoot only*
-#   ad 2.: in alpine's httpd.conf, the first occurence of AllowOverride is 
+#   ad 2.: in alpine's httpd.conf, the first occurrence of AllowOverride is 
 #          AllowOverride none (note the small 'n'). This one, though,
 #          does not concern the DocumentRoot, but /.
 #          The first occurence of AllowOverride None (note the capital 'n')
