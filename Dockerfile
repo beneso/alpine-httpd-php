@@ -22,6 +22,8 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -
     sed -i 's/^#LoadModule rewrite_module/LoadModule rewrite_module/g' /etc/apache2/httpd.conf ; \
     sed -i -e '1{x;s/^/first/;x;}1,/AllowOverride None/{x;/first/s///;x;s/AllowOverride None/AllowOverride All/;}'  /etc/apache2/httpd.conf
 
+USER apache
+
 EXPOSE 80
 
 ENTRYPOINT ["httpd", "-D", "FOREGROUND"]
