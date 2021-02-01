@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:latest
 MAINTAINER Ondrej Adam Benes <obenes0@centrum.cz>
 
 # https://wiki.alpinelinux.org/wiki/Setting_Up_Apache_with_PHP
