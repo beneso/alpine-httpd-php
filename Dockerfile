@@ -6,7 +6,7 @@ MAINTAINER Ondrej Adam Benes <obenes0@centrum.cz>
 RUN echo http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -d'.' -f1,2)/main >> /etc/apk/repositories ; \
     echo http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -d'.' -f1,2)/community >> /etc/apk/repositories ; \
     apk update ; \
-    apk add --no-cache apache2 php7-apache2 composer php7-tokenizer php7-session php7-pdo ;\
+    apk add --no-cache apache2 php7-apache2 composer php7-tokenizer php7-session php7-pdo php7-pdo_dblib php7-pdo_pgsql php7-pdo_sqlite php7-pdo_mysql php7-pdo_odbc ; \
 
 # For Nette PHP framework to display application without the /www, we need two things:
 # 1. Load rewrite_module
@@ -22,7 +22,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -
     sed -i 's/^#LoadModule rewrite_module/LoadModule rewrite_module/g' /etc/apache2/httpd.conf ; \
     sed -i -e '1{x;s/^/first/;x;}1,/AllowOverride None/{x;/first/s///;x;s/AllowOverride None/AllowOverride All/;}'  /etc/apache2/httpd.conf
 
-USER apache
+#USER apache
 
 EXPOSE 80
 
