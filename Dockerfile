@@ -8,7 +8,7 @@ RUN  echo https://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut
      apk update ; \
 # php7-openssl  https://github.com/codecasts/php-alpine/issues/54
      apk add --no-cache apache2 php7 php7-apache2 composer php7-tokenizer php7-session php7-pdo \
-              php7-pdo_dblib php7-pdo_pgsql php7-pdo_sqlite php7-pdo_mysql php7-pdo_odbc php7-openssl ; \
+              php7-pdo_dblib php7-pdo_pgsql php7-pdo_sqlite php7-pdo_mysql php7-pdo_odbc php7-openssl php7-ctype ; \
 # For Nette PHP framework to display application without the /www, we need two things:
 # 1. Load rewrite_module
 # 2. Make sure AllowOverride allows .htaccess *for the DocumentRoot only*
